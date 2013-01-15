@@ -53,7 +53,7 @@ function! s:Start()
         \ g:shareboard_host,
         \ g:shareboard_port)
   if exists('g:shareboard_command')
-    let l:command = l:command . printf(' -c "%s"', g:shareboard_command)
+    let l:command = l:command . printf(' -c %s', shellescape(g:shareboard_command))
   endif
   call s:Exec(l:command, 1)
   
@@ -81,7 +81,7 @@ endfunction
 function! s:Compile()
   let l:command = printf('echo %s | %s > %s',
         \ s:Get(),
-        \ g:shareboard_command,
+        \ shellescape(g:shareboard_command),
         \ shellescape(expand("%:r:h") . g:shareboard_compile_ext))
   call s:Exec(l:command, 0)
 endfunction
