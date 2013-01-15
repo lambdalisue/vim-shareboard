@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+</head>
+<body>
+<h1 id="shareboard.vim">shareboard.vim</h1>
+<p>shareboard.vim is a HTML preview software for vim inspired by <a href="https://github.com/mattn/mkdpreview-vim">mkdpreview-vim</a>.</p>
+<div class="figure">
+<img src="./static/screenshot001.png" title="Screenshot" alt="shareboard.vim screenshot" /><p class="caption">shareboard.vim screenshot</p>
+</div>
+<h2 id="quick-usage">Quick Usage</h2>
+<ol style="list-style-type: decimal">
+<li><p>Install <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> with</p>
+<dl>
+<dt>Windows &amp; Mac OS X</dt>
+<dd>There is a package installer at pandoc's <a href="http://code.google.com/p/pandoc/downloads/list">download page</a>
+</dd>
+<dt>Linux</dt>
+<dd>Try your package manager such as <code>apt-get</code>, <code>yum</code> or <code>rpm</code>
+</dd>
+</dl>
+<p>See http://johnmacfarlane.net/pandoc/installing.html for more detail</p></li>
+<li><p>Install <a href="https://github.com/lambdalisue/Shareboard">Shareboard</a> with</p>
+<dl>
+<dt>Windows</dt>
+<dd><p>Use <a href="http://packages.python.org/distribute/easy_install.html">easy_install</a> to install Shareboard. See http://packages.python.org/distribute/easy_install.html for more detail</p>
+<pre><code>$ easy_install shareboard</code></pre>
+</dd>
+<dt>Mac OS X &amp; Linux</dt>
+<dd><p>Use <a href="http://www.pip-installer.org/en/latest/">pip</a> or <a href="http://packages.python.org/distribute/easy_install.html">easy_install</a> to install Shareboard.</p>
+<pre><code>$ pip shareboard</code></pre>
+</dd>
+</dl></li>
+<li><p>Confirm Pandoc and Shareboard are correctly installed with command below</p>
+<p>$ pandoc –help $ shareboard –help</p></li>
+<li><p>Create <code>helloworld.md</code> and write some Markdown, type <code>&lt;Leader&gt;v</code> to show Shareboard viewer</p></li>
+</ol>
+<h2 id="install">Install</h2>
+<p>shareboard.vim use <a href="https://github.com/lambdalisue/Shareboard">Shareboard</a> to display the preview, so you have to install it with the commands below</p>
+<pre><code>$ pip install shareboard</code></pre>
+<p>After you install Shareboard, you can install shareboard.vim with <a href="https://github.com/tpope/vim-pathogen">vim-pathogen</a> , <a href="https://github.com/gmarik/vundle">vundle</a> or simply copy the files into your <code>.vim</code> directory</p>
+<p>And also, if you want to use shareboard.vim with <a href="http://daringfireball.net/projects/markdown/">Markdown</a>, <a href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>, or <a href="http://textile.thresholdstate.com/">Textlie</a> file, you need to install <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> to convert these types of files into HTML file.</p>
+<p>If you want to use different programs to convert files such as <a href="http://search.cpan.org/~sekimura/Text-Markdown-Discount-0.04/xt/MarkdownXS.pl">Markdown.pl</a>, you can change <code>g:shareboard_command</code> variable.</p>
+<h2 id="usage">Usage</h2>
+<p>In default, shareboard.vim activate two key mappings in following file type</p>
+<ul>
+<li>Html</li>
+<li>Markdown</li>
+<li>reStructuredText</li>
+<li>Textlie</li>
+</ul>
+<p>The key mappings activated are</p>
+<dl>
+<dt><code>&lt;Leader&gt;v</code></dt>
+<dd>Show the preview window. After you show the preview window, the preview will automatically be updated when you save the file with <code>:w</code> command
+</dd>
+<dt><code>&lt;Leader&gt;c</code></dt>
+<dd>Compile the data with command specified in <code>g:shareboard_command</code>
+</dd>
+</dl>
+<h2 id="configure">Configure</h2>
+<h3 id="variables">Variables</h3>
+<dl>
+<dt><code>g:shareboard_path</code></dt>
+<dd>Specify the path of Shareboard. Default is <code>shareboard</code>
+</dd>
+<dt><code>g:shareboard_host</code></dt>
+<dd>Specify the host name of Shareboard server. Default is <code>localhost</code>
+</dd>
+<dt><code>g:shareboard_port</code></dt>
+<dd>Specify the port number of Shareboard server. Default is <code>8081</code>
+</dd>
+<dt><code>g:shareboard_command</code></dt>
+<dd>Specify the compile command. Default is <code>pandoc -Ss --toc -m -t html</code>
+</dd>
+<dt><code>g:shareboard_compile_ext</code></dt>
+<dd>Specify the ext name of compiled file. Default is <code>.html</code>
+</dd>
+</dl>
+<h3 id="functions">Functions</h3>
+<dl>
+<dt><code>ShareboardStart</code></dt>
+<dd>Start Shareboard server with specified settings. It also execute
+</dd>
+<dt><code>ShareboardUpdate</code></dt>
+<dd>Update Shareboard with the current buffer. The Shareboard must be exected before.
+</dd>
+<dt><code>ShareboardPreview</code></dt>
+<dd>Call <code>ShareboardStart</code> and <code>ShareboardUpdate</code>
+</dd>
+<dt><code>ShareboardCompile</code></dt>
+<dd>Compile current buffer with specified settings.
+</dd>
+</dl>
+<h3 id="key-mappings">Key mappings</h3>
+<dl>
+<dt><code>&lt;Leader&gt;v</code></dt>
+<dd>Show the preview window. After you show the preview window, the preview will automatically be updated when you save the file with <code>:w</code> command
+</dd>
+<dt><code>&lt;Leader&gt;c</code></dt>
+<dd>Compile the data with command specified in <code>g:shareboard_command</code>
+</dd>
+</dl>
+</body>
+</html>
