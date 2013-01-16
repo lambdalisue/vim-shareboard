@@ -64,11 +64,12 @@ function! s:Start()
 endfunction
 
 function! s:Update()
-  let l:command = printf('%s -o %s -p %s set %s',
+  let l:command = printf('%s -o %s -p %s set %s --base-url "file://%s"',
         \ g:shareboard_path,
         \ g:shareboard_host,
         \ g:shareboard_port,
-        \ s:Get())
+        \ s:Get(),
+        \ expand("%:p:h"))
   call s:Exec(l:command, 1)
 endfunction
 
