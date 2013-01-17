@@ -2,7 +2,7 @@ shareboard.vim
 =============================================================================
 
 Version
-:   0.1.1
+:   0.1.2
 
 shareboard.vim is a HTML preview software for vim inspired by [mkdpreview-vim][].
 
