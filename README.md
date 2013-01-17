@@ -6,7 +6,7 @@ Version
 
 shareboard.vim is a HTML preview software for vim inspired by [mkdpreview-vim][].
 
-![shareboard.vim screenshot](./static/screenshot001.png "Screenshot")
+![shareboard.vim screenshot](https://raw.github.com/lambdalisue/shareboard.vim/master/static/screenshot001.png "Screenshot")
 
 [mkdpreview-vim]: https://github.com/mattn/mkdpreview-vim
 
