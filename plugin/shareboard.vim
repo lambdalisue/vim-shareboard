@@ -13,7 +13,7 @@ let g:shareboard_use_default_mapping = get(g:, 'shareboard_use_default_mapping',
 
 function! s:Get()
   let l:lines = getline(1, '$')
-  return escape(join(l:lines, "\n"), '"`'."'")
+  return substitute(shellescape(join(l:lines, "\n")), "\\\\\n", "\n", "g")
 endfunction
   
 
@@ -64,12 +64,12 @@ function! s:Start()
 endfunction
 
 function! s:Update()
-  let l:command = printf('%s -o %s -p %s set "%s" --filename "%s"',
+  let l:command = printf('%s -o %s -p %s set %s --filename %s',
         \ g:shareboard_path,
         \ g:shareboard_host,
         \ g:shareboard_port,
         \ s:Get(),
-        \ expand("%:p"))
+        \ shellescape(expand("%:p")))
   call s:Exec(l:command, 1)
 endfunction
 
@@ -80,7 +80,7 @@ function! s:Preview()
 endfunction
 
 function! s:Compile()
-  let l:command = printf('echo "%s" | %s > %s',
+  let l:command = printf('echo %s | %s > %s',
         \ s:Get(),
         \ shellescape(g:shareboard_command),
         \ shellescape(expand("%:r:h") . g:shareboard_compile_ext))
