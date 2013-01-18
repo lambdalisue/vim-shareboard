@@ -37,6 +37,8 @@ Quick Usage
 
             $ pip shareboard
 
+    After that, **you have to [Qt][] and [PySide][] to enable shareboard viewer**
+
 3.  Confirm Pandoc and Shareboard are correctly installed with command below
 
     $ pandoc --help
@@ -47,8 +49,18 @@ Quick Usage
 
 [easy_install]: http://packages.python.org/distribute/easy_install.html
 [pip]: http://www.pip-installer.org/en/latest/
+[Qt]: http://qt.digia.com/
+[PySide]: http://qt-project.org/wiki/PySide
 
-    
+
+Require
+-----------------------------------------------------------------------------
+-   Python
+-   [Shareboard][]
+    -   [Qt][]
+    -   [PySide][]
+-   [Pandoc][] (Reqiured if you want to use as default settings)
+
 Install
 -----------------------------------------------------------------------------
 
@@ -56,6 +68,9 @@ shareboard.vim use [Shareboard][] to display the preview, so you have to install
 it with the commands below
 
     $ pip install shareboard
+
+And also, you have to install [Qt][] and [PySide][] to enable shareboard
+builtin HTML viewer.
 
 After you install Shareboard, you can install shareboard.vim with [vim-pathogen][]
 , [vundle][] or simply copy the files into your `.vim` directory
