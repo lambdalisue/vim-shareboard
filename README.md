@@ -12,6 +12,7 @@ shareboard.vim is a HTML preview software for vim inspired by [mkdpreview-vim][]
 
 Quick Usage
 -----------------------------------------------------------------------------
+See [Packages](#packages) to install in Arch Linux.
 
 1.  Install [Pandoc][] with
 
@@ -76,7 +77,7 @@ After you install Shareboard, you can install shareboard.vim with [vim-pathogen]
 , [vundle][] or simply copy the files into your `.vim` directory
 
 And also, if you want to use shareboard.vim with [Markdown][],
-[reStructuredText][], or [Textlie][] file, you need to install [Pandoc][] to
+[reStructuredText][], or [Textile][] file, you need to install [Pandoc][] to
 convert these types of files into HTML file.
 
 If you want to use different programs to convert files such as [Markdown.pl][],
@@ -87,7 +88,7 @@ you can change `g:shareboard_command` variable.
 [vundle]: https://github.com/gmarik/vundle
 [Markdown]: http://daringfireball.net/projects/markdown/
 [reStructuredText]: http://docutils.sourceforge.net/rst.html
-[Textlie]: http://textile.thresholdstate.com/
+[Textile]: http://textile.thresholdstate.com/
 [Pandoc]: http://johnmacfarlane.net/pandoc/
 [Markdown.pl]: http://search.cpan.org/~sekimura/Text-Markdown-Discount-0.04/xt/MarkdownXS.pl
 
@@ -99,7 +100,7 @@ In default, shareboard.vim activate two key mappings in following file type
 -   Html
 -   Markdown
 -   reStructuredText
--   Textlie
+-   Textile
 
 The key mappings activated are
 
@@ -220,3 +221,14 @@ With this `command.sh`, shareboard.vim will preview the text below to the screen
     Note that the custom CSS is applied, all units are replaced with appropriate character and all C replaced with degree Celsius.
 
 ![shareboard.vim screenshot](static/screenshot002.png "Screenshot")
+
+
+Packages
+----------------------------------------------------------------------------
+Currently packages of shareboard.vim and [Shareboard][] are available in only
+Arch Linux
+
+-   Arch Linux (Thank [Anntoin](https://github.com/lambdalisue/shareboard.vim/issues/1#issuecomment-13129299))
+
+    -   [Package for Shareboard](https://aur.archlinux.org/packages/python2-shareboard-git/)
+    -   [Package for shareboard.vim](https://aur.archlinux.org/packages/vim-shareboard-git/)
