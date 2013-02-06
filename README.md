@@ -5,7 +5,7 @@ Version:   0.1.4rc2
 
 shareboard.vim is a HTML preview software for vim inspired by [mkdpreview-vim][].
 
-![shareboard.vim screenshot](https://raw.github.com/lambdalisue/shareboard.vim/master/static/screenshot001.png "Screenshot")
+![shareboard.vim screenshot](static/screenshot001.png "Screenshot")
 
 [mkdpreview-vim]: https://github.com/mattn/mkdpreview-vim
 
@@ -219,4 +219,4 @@ With this `command.sh`, shareboard.vim will preview the text below to the screen
 
     Note that the custom CSS is applied, all units are replaced with appropriate character and all C replaced with degree Celsius.
 
-![shareboard.vim screenshot](https://raw.github.com/lambdalisue/shareboard.vim/master/static/screenshot002.png "Screenshot")
+![shareboard.vim screenshot](static/screenshot002.png "Screenshot")
