@@ -1,7 +1,7 @@
 shareboard.vim
 =============================================================================
 
-Version:   0.1.4
+Version:   0.1.4rc2
 
 shareboard.vim is a HTML preview software for vim inspired by [mkdpreview-vim][].
 
@@ -190,8 +190,8 @@ to the Pandoc like
     # Replace [0-9] u[mMgl] -> [0-9] &mu;[mMgl] (e.g. 10 ul -> 10 &mu;l)
     TEXT=`echo "$TEXT" | sed 's/\([0-9]\) u\([mMgl]\)/\1 \&mu;\2/g'
 
-    # Replace &celsius; -> C&deg;
-    TEXT=`echo "$TEXT" | sed 's/\&celsius;/C\&deg;/g'
+    # Replace &celsius; -> &deg;C
+    TEXT=`echo "$TEXT" | sed 's/\&celsius;/\&deg;C/g'
 
     # See the link below to all replacement I daily use.
     # https://github.com/lambdalisue/dotfiles/blob/master/vim/shareboard/command.sh
