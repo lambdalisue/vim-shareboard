@@ -9,13 +9,13 @@ let g:shareboard_port = get(g:, 'shareboard_port', '8081')
 let g:shareboard_command = get(g:, 'shareboard_command', "pandoc -Ss -m -t html")
 let g:shareboard_compile_ext = get(g:, 'shareboard_compile_ext', ".html")
 let g:shareboard_use_default_mapping = get(g:, 'shareboard_use_default_mapping', 1)
-"let g:shareboard_debug = 1
+let g:shareboard_debug = 1
 
 function! s:Get()
   let l:lines = getline(1, '$')
   return substitute(shellescape(join(l:lines, "\n")), "\\\\\n", "\n", "g")
 endfunction
-  
+
 
 function! s:Exec(command, null)
   if exists('g:shareboard_debug') && g:shareboard_debug
@@ -56,7 +56,7 @@ function! s:Start()
     let l:command = l:command . printf(' -c %s', shellescape(g:shareboard_command))
   endif
   call s:Exec(l:command, 1)
-  
+
   augroup Preview
     autocmd!
     autocmd BufWritePost <buffer> call <SID>Update()
@@ -80,9 +80,9 @@ function! s:Preview()
 endfunction
 
 function! s:Compile()
-  let l:command = printf('echo %s | %s > %s',
+  let l:command = printf('echo -e %s | %s > %s',
         \ s:Get(),
-        \ shellescape(g:shareboard_command),
+        \ g:shareboard_command,
         \ shellescape(expand("%:r:h") . g:shareboard_compile_ext))
   call s:Exec(l:command, 0)
 endfunction
