@@ -9,7 +9,7 @@ let g:shareboard_port = get(g:, 'shareboard_port', '8081')
 let g:shareboard_command = get(g:, 'shareboard_command', "pandoc -Ss -m -t html")
 let g:shareboard_compile_ext = get(g:, 'shareboard_compile_ext', ".html")
 let g:shareboard_use_default_mapping = get(g:, 'shareboard_use_default_mapping', 1)
-let g:shareboard_debug = 1
+"let g:shareboard_debug = 1
 
 function! s:Get()
   let l:lines = getline(1, '$')
