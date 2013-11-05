@@ -80,7 +80,7 @@ function! s:Preview()
 endfunction
 
 function! s:Compile()
-  let l:command = printf('echo -e %s | %s > %s',
+  let l:command = printf('echo -nE %s | %s | tee %s',
         \ s:Get(),
         \ g:shareboard_command,
         \ shellescape(expand("%:r:h") . g:shareboard_compile_ext))
