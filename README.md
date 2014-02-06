@@ -127,7 +127,7 @@ Specify the host name of Shareboard server. Default is `localhost`
 Specify the port number of Shareboard server. Default is `8081`
 
 `g:shareboard_command`
-Specify the compile command. Default is `pandoc -Ss --toc -m -t html`
+Specify the compile command. Default is `pandoc -Ss --webtex -t html`
 
 `g:shareboard_compile_ext`
 Specify the ext name of compiled file. Default is `.html`
