@@ -34,9 +34,9 @@ See [Packages](#packages) to install in Arch Linux.
         $ easy_install shareboard
 
     **Mac OS X & Linux**
-    Use [pip][] or [easy_install][] to install Shareboard.
+    Use [pip][] or [easy_install][] to install Shareboard. You may need to use `sudo`.
 
-        $ pip shareboard
+        $ pip install shareboard
 
     After that, **you have to install [Qt][] and [PySide][] to enable shareboard viewer**
 
